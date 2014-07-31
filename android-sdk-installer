@@ -73,6 +73,8 @@ elif [[ $os == 'osx' ]]; then
     export ANDROID_HOME=$INSTALLER_DIR/android-sdk-macosx
 fi
 
+rm -f $INSTALLER_DIR/$SDK_FILE $SDK_URL
+
 # Download scripts
 # Mac on Travis has issues with SSL certs if we don't use the -3 / -ssl3 option
 curl -3L -o $TOOLS_DIR/wait_for_emulator $WAIT_FOR_EMULATOR_URL
